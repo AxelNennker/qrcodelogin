@@ -1,0 +1,9 @@
+{
+  "name": "qrcodelogin",
+  "title": "qrcodelogin",
+  "id": "jid1-rbsGgYdWYcLwBg",
+  "description": "QR-Code Login",
+  "author": "Axel Nennker <axel@nennker.de>",
+  "license": "MPL 2.0, pwd.js uses GPL3 licensed code",
+  "version": "1.0"
+}
