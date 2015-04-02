@@ -3582,7 +3582,7 @@ qrcode.decode = function(src){
       qrcode.width = canvas_qr.width;
       qrcode.height = canvas_qr.height;
       qrcode.imagedata = context.getImageData(0, 0, qrcode.width, qrcode.height);
-      console.log("qrcode.width="+qrcode.width+" qrcode.height="+qrcode.height);
+      //console.log("qrcode.width="+qrcode.width+" qrcode.height="+qrcode.height);
       qrcode.result = qrcode.process(context);
       if(qrcode.callback!=null)
           qrcode.callback(qrcode.result);
@@ -5135,14 +5135,14 @@ function captureToCanvas() {
     	gCtx.drawImage(video,0,0);
     	qrcode.decode();
         var t1 = new Date().getTime();
-        console.log("t1-t0:" + (t1-t0));
+        //console.log("t1-t0:" + (t1-t0));
         var t = gTimeout - (t1-t0);
         if (t < 0) t = 0;
         setTimeout(captureToCanvas, t);
     }
     catch(e){       
           var t1 = new Date().getTime();
-          console.log("t1-t0:" + (t1-t0));
+          //console.log("t1-t0:" + (t1-t0));
           var t = gTimeout - (t1-t0);
           if (t < 0) t = 0;
           console.log("captureToCanvas threw: " + e);
