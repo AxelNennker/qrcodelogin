@@ -3859,11 +3859,6 @@ function URShift( number,  bits)
 }
 
 
-Array.prototype.remove = function(from, to) {
-var rest = this.slice((to || from) + 1 || this.length);
-this.length = from < 0 ? this.length + from : from;
-return this.push.apply(this, rest);
-};
 /*
 Ported to JavaScript by Lazar Laszlo 2011 
 
@@ -4286,6 +4281,12 @@ function FinderPatternFinder()
 				      }
 					});
 
+var remove = function(arr, from, to) {
+  var rest = arr.slice((to || from) + 1 || arr.length);
+  arr.length = from < 0 ? arr.length + from : from;
+  return arr.push.apply(arr, rest);
+};
+
 				var stdDev = Math.sqrt(square / startSize - average * average);
 				var limit = Math.max(0.2 * average, stdDev);
 				for (var i = 0; i < this.possibleCenters.length && this.possibleCenters.length > 3; i++)
@@ -4294,7 +4295,7 @@ function FinderPatternFinder()
 					//if (Math.abs(pattern.EstimatedModuleSize - average) > 0.2 * average)
                   if (Math.abs(pattern.EstimatedModuleSize - average) > limit)
 					{
-						this.possibleCenters.remove(i);
+						remove(possibleCenters,i);
 						i--;
 					}
 				}
