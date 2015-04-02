@@ -5249,7 +5249,7 @@ function load()
 
 function foundPasswordForm(obj) {
   "use strict";
-  console.log("get-text.js found-password-form " + JSON.stringify(obj));
+  console.log("pwd.js found-password-form " + JSON.stringify(obj));
   if (obj) {
     var text = {};
     text.u = obj.user;
@@ -5264,7 +5264,7 @@ function foundPasswordForm(obj) {
         value: JSON.stringify(text)
       });
   } else {
-    console.error("get-text.js found-password-form obj is null");
+    console.error("pwd.js found-password-form obj is null");
   }
 };
 
